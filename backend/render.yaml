@@ -1,0 +1,36 @@
+# render.yaml - Deploy backend to Render.com (free tier works)
+services:
+  - type: web
+    name: swiftlink-bus-api
+    env: node
+    region: frankfurt # closest to Uganda
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: MTN_ENVIRONMENT
+        value: sandbox # change to live when approved
+      - key: MTN_SUBSCRIPTION_KEY
+        sync: false
+      - key: MTN_API_USER_ID
+        sync: false
+      - key: MTN_API_KEY
+        sync: false
+      - key: MTN_CALLBACK_URL
+        value: https://swiftlink-bus-api.onrender.com/api/momo/callback
+      - key: AIRTEL_ENVIRONMENT
+        value: sandbox
+      - key: AIRTEL_CLIENT_ID
+        sync: false
+      - key: AIRTEL_CLIENT_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: https://swiftlink-bus.vercel.app
+      - key: PORT
+        value: 10000

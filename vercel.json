@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "swiftlink-bus",
+  "builds": [{ "src": "frontend-clean/index.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "/frontend-clean/index.html" }],
+  "env": {
+    "VITE_BACKEND_URL": "https://swiftlink-bus-api.onrender.com"
+  }
+}

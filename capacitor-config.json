@@ -1,0 +1,14 @@
+{
+  "appId": "com.swiftlink.conductor",
+  "appName": "SwiftLink Conductor",
+  "webDir": "frontend-clean",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "Camera": {
+      "presentationStyle": "fullscreen"
+    }
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
